@@ -91,26 +91,28 @@ class CheckComponents extends StatefulWidget {
   final String answer;
   final String selectValue;
   final List<String> items;
-  final Function onSelect;
+  final Function(String) onSelect; // Cambiado a Function(String)
   const CheckComponents({
-    super.key,
+    super.key, // Asegúrate de utilizar 'Key?' en lugar de 'super.key'
     required this.answer,
     required this.selectValue,
     required this.items,
     required this.onSelect,
-  });
+  }); // Añadido super(key: key);
 
   @override
   State<CheckComponents> createState() => _CheckComponentsState();
 }
 
 class _CheckComponentsState extends State<CheckComponents> {
-  int indexSelect = 5;
+  int? indexSelect; // Cambiado a int? para permitir la opción de deselección
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Column(
-      children: List.generate(3, (index) {
+      children: List.generate(widget.items.length, (index) {
+        // Utilizar widget.items.length en lugar de un valor fijo
         return Container(
           height: size.height * .06,
           width: size.width,
@@ -123,8 +125,15 @@ class _CheckComponentsState extends State<CheckComponents> {
               borderRadius: BorderRadius.circular(10)),
           child: InkWell(
             onTap: () {
-              setState(() => indexSelect = index);
-              widget.onSelect();
+              setState(() {
+                if (indexSelect == index) {
+                  indexSelect = null; // Deseleccionar si ya está seleccionado
+                } else {
+                  indexSelect = index;
+                }
+              });
+              widget.onSelect(widget
+                  .items[index]); // Envia el valor seleccionado al widget padre
             },
             child: Row(
               children: [

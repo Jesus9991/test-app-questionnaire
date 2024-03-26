@@ -1,9 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:test_questionnaire/controller/export/components_exports.dart';
 import 'package:test_questionnaire/controller/routes/main_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const StateApp());
+}
+
+class StateApp extends StatelessWidget {
+  const StateApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => SaveDataInputProvider()),
+        ChangeNotifierProvider(
+            create: (context) => SecondSaveDataInputsProvider()),
+        ChangeNotifierProvider(create: (context) => ThirdSaveInputsProvider()),
+      ],
+      child: const MyApp(),
+    );
+  }
 }
 
 class MyApp extends StatelessWidget {

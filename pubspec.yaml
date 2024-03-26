@@ -35,8 +35,11 @@ dependencies:
     sdk: flutter
   google_fonts: ^4.0.5
   iconly: ^1.0.1
+  icons_plus: ^5.0.0
   loading_indicator: ^3.1.1
   path_provider: ^2.1.2
+  provider: ^6.1.2
+  sqflite: ^2.3.2
 
 dev_dependencies:
   flutter_lints: ^3.0.0

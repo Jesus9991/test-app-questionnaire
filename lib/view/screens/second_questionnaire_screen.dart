@@ -1,5 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:test_questionnaire/controller/export/components_exports.dart';
 import 'package:test_questionnaire/controller/routes/main_routes.dart';
 import 'package:test_questionnaire/view/components/inputs_components.dart';
@@ -18,6 +21,8 @@ class _SecondQuestionnaireScreenState extends State<SecondQuestionnaireScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final secondProvider = Provider.of<SecondSaveDataInputsProvider>(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cuestionario'),
@@ -44,7 +49,8 @@ class _SecondQuestionnaireScreenState extends State<SecondQuestionnaireScreen> {
                   'Casado/a',
                   'Viuda/a',
                 ],
-                onChanged: (val) {},
+                onChanged: (val) =>
+                    secondProvider.firtQuestions(val.toString()),
               ),
               SizedBox(height: size.height * .02),
               /*pregunta  #2*/
@@ -61,7 +67,8 @@ class _SecondQuestionnaireScreenState extends State<SecondQuestionnaireScreen> {
                   '5 horas',
                   '+10 horas',
                 ],
-                onChanged: (val) {},
+                onChanged: (val) =>
+                    secondProvider.secondQuestions(val.toString()),
               ),
               SizedBox(height: size.height * .02),
               /*pregunta  #3*/
@@ -76,16 +83,22 @@ class _SecondQuestionnaireScreenState extends State<SecondQuestionnaireScreen> {
                   '1 vez al año',
                   'Nunca viajo',
                 ],
-                onChanged: (val) {},
+                onChanged: (val) =>
+                    secondProvider.thirdQuestions(val.toString()),
               ),
               SizedBox(height: size.height * .03),
               ButtonComponents(
                 title: 'Continuar',
-                onPressed: () {
-                  Navigator.pushNamed(context, MainRoutes.thirdRoute);
-                  // if (formKey.currentState!.validate()) {
-                  //   //
-                  // }
+                onPressed: () async {
+                  if (formKey.currentState!.validate()) {
+                    /*guarda los datos en la base */
+                    await secondProvider.saveDataToDatabase();
+                    /*muestra un show modal */
+                    SnackBarWidget.showSnackBar(
+                        context, 'Datos guardados', Icons.check_circle_rounded);
+                    /*navega a la siguiente pantalla*/
+                    Navigator.pushNamed(context, MainRoutes.thirdRoute);
+                  }
                 },
               )
             ],

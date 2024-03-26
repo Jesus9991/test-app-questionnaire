@@ -1,6 +1,11 @@
 /*
 manejo de exportaciones, de tipo componentes
  */
+export 'package:test_questionnaire/controller/providers/third_save_inputs_provider.dart';
+export 'package:test_questionnaire/controller/providers/second_save_data_inputs_provider.dart';
+export 'package:test_questionnaire/view/widget/snacbar_components.dart';
+export 'package:test_questionnaire/controller/services/data_base_services.dart';
+export 'package:test_questionnaire/controller/providers/save_data_inputs_provider.dart';
 export 'package:test_questionnaire/view/components/button_components.dart';
 export 'package:test_questionnaire/controller/services/validation_inputs.dart';
 export 'package:test_questionnaire/view/components/title_question.dart';
