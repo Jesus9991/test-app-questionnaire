@@ -21,7 +21,7 @@ class ButtonsMainTheme {
               PaletteColorsTheme.whiteColor, //color de las letras */
           backgroundColor: PaletteColorsTheme.purpleColor, //color del boton */
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))));
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))));
   //
   static OutlinedButtonThemeData outlinedButtonLight = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
@@ -76,7 +76,7 @@ class ButtonsMainTheme {
     shadowColor: PaletteColorsTheme.transparentColor,
     side: const BorderSide(color: PaletteColorsTheme.purpleColor),
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(15),
+      borderRadius: BorderRadius.circular(20),
       side: const BorderSide(
           color: PaletteColorsTheme.purpleColor), // Color del borde
     ),
@@ -92,7 +92,7 @@ class ButtonsMainTheme {
           backgroundColor: PaletteColorsTheme.purpleColor, //color del boton */
           elevation: 0,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(30))));
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15))));
   static TextButtonThemeData textButtonDark = TextButtonThemeData(
       style: TextButton.styleFrom(
     textStyle: typeFont.copyWith(

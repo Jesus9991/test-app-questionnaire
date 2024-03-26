@@ -1,6 +1,9 @@
 /*
 manejo de exportaciones, de tipo componentes
  */
+export 'package:test_questionnaire/view/components/button_components.dart';
+export 'package:test_questionnaire/controller/services/validation_inputs.dart';
+export 'package:test_questionnaire/view/components/title_question.dart';
 export 'package:test_questionnaire/controller/theme/main_theme.dart';
 export 'package:test_questionnaire/controller/theme/app_bar_theme.dart';
 export 'package:test_questionnaire/controller/theme/color_pelette_theme.dart';

@@ -41,11 +41,11 @@ class TextsMainTheme {
     bodyLarge: typeFont.copyWith(
         fontSize: 15,
         fontWeight: FontWeight.bold,
-        color: PaletteColorsTheme.blackColor),
+        color: PaletteColorsTheme.purpleColor),
     bodyMedium: typeFont.copyWith(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        color: PaletteColorsTheme.blackColor),
+        color: PaletteColorsTheme.purpleColor),
     bodySmall: typeFont.copyWith(
         fontSize: 12,
         fontWeight: FontWeight.w200,

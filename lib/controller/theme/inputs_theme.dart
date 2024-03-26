@@ -19,20 +19,20 @@ class InputDecorationMainTheme {
         fontWeight: FontWeight.w300,
         color: PaletteColorsTheme.blackColor),
     disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide: const BorderSide(
             color: PaletteColorsTheme.greyTwoColor, width: 1.0)),
     enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide: const BorderSide(
             color: PaletteColorsTheme.greyTwoColor, width: 1.0)),
     focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide(
             color: PaletteColorsTheme.purpleColor.withOpacity(0.4),
             width: 2.0)),
     errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide:
             const BorderSide(color: PaletteColorsTheme.redColor, width: 2.0)),
     focusedErrorBorder: OutlineInputBorder(
@@ -52,23 +52,23 @@ class InputDecorationMainTheme {
         fontWeight: FontWeight.w300,
         color: PaletteColorsTheme.whiteColor),
     disabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide: const BorderSide(
             color: PaletteColorsTheme.greyTwoColor, width: 1.0)),
     enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide: const BorderSide(
             color: PaletteColorsTheme.greyTwoColor, width: 1.0)),
     focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide: BorderSide(
             color: PaletteColorsTheme.whiteColor.withOpacity(0.4), width: 2.0)),
     errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide:
             const BorderSide(color: PaletteColorsTheme.redColor, width: 2.0)),
     focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         borderSide:
             const BorderSide(color: PaletteColorsTheme.redColor, width: 2.0)),
   );
